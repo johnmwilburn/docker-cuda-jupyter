@@ -1,0 +1,10 @@
+{
+    "UserName": "<username-on-remote-machine>",
+    "RemoteHost": "<ip-address-or-hostname>",
+    "VolumeDir": "<where-on-remote-machine-to-save-files>",
+    "LocalPort": "<port-to-access-jupyter-on-local-machine>",
+    "RemotePort": "<port-to-access-jupyter-on-remote-machine>",
+    "ContainerPort": "<port-to-access-jupyter-in-docker-container>",
+    "ImageName": "<your-name-or-identifier>/<what-you-want-to-call-your-image>"
+  }
+  
