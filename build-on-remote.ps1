@@ -7,7 +7,7 @@ $RemoteHost = $config.RemoteHost
 $ImageName = $config.ImageName
 
 # SCP Dockerfile to remote host
-scp -r Dockerfile "${UserName}@${RemoteHost}:~/"
+scp -r Dockerfile requirements.txt "${UserName}@${RemoteHost}:~/"
 
 # SSH into remote host and build Docker image
-ssh "${UserName}@${RemoteHost}" "docker build -t ${ImageName} ~/"
+ssh "${UserName}@${RemoteHost}" "mkdir ~/tmp-build && cp Dockerfile requirements.txt ~/tmp && docker build -t ${ImageName} ~/tmp-build && rm -rf ~/tmp-build"
