@@ -1,6 +1,6 @@
 **README**
 
-This repository contains scripts to build and utilize a CUDA-PyTorch enabled Jupyter Lab environment via SSH with easy extensibility for libraries such as Hugging Face transformers. The scripts are configurd to bind the Docker container to localhost on the remote machine after establishing an SSH tunnel to prevent the deployed container from listening for other connections. 
+This repository contains scripts to build and utilize a CUDA-PyTorch enabled Jupyter Lab environment via SSH with easy extensibility for libraries such as Hugging Face transformers. The scripts are configured to bind the Docker container to localhost on the remote machine after establishing an SSH tunnel to prevent the deployed container from listening for other connections. 
 
 1. **config.json**:
    - This JSON file stores configuration variables used by the other scripts. You should populate it with the necessary values such as `UserName`, `RemoteHost`, and `ImageName`.
