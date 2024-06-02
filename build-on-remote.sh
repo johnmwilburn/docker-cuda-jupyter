@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Read variables from config.json
-source config.json
-
-# SCP Dockerfile to remote host
+source .env
 scp -r Dockerfile requirements.txt "${UserName}@${RemoteHost}:~/"
-
-# SSH into remote host and build Docker image
-ssh "${UserName}@${RemoteHost}" "mkdir ~/tmp-build && cp Dockerfile requirements.txt ~/tmp && docker build -t ${ImageName} ~/tmp-build && rm -rf ~/tmp-build"
+ssh "${UserName}@${RemoteHost}" "mkdir ~/tmp-build && cp Dockerfile requirements.txt ~/tmp-build && docker build --build-arg BASE_IMAGE="${BaseImage}" -t ${ImageName} ~/tmp-build && rm -rf ~/tmp-build"

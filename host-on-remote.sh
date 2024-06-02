@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Read variables from config.json
-source config.json
-
-# Execute command
+source .env
 ssh -t -L ${LocalPort}:127.0.0.1:${RemotePort} ${UserName}@${RemoteHost} \
     "[ -d \"${VolumeDir}\" ] && \
     [ -d \"${VolumeDir}/working\" ] && \
